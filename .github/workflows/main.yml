@@ -1,0 +1,31 @@
+
+name: MICHAELRDP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  secure-rdp:
+    name: MICHAELRDP CHECK
+    runs-on: windows-latest
+
+    steps:
+      - name: Download project
+        uses: actions/checkout@v4
+
+      - name: Check Windows environment
+        shell: pwsh
+        run: |
+          Write-Host "=========================="
+          Write-Host "       MICHAELRDP"
+          Write-Host "=========================="
+
+          Write-Host "GitHub runner:"
+          Write-Host $env:RUNNER_NAME
+
+          Write-Host "Windows version:"
+          Write-Host ([Environment]::OSVersion.Version)
+
+          Write-Host "Project verification completed."
+          Write-Host "Your personal PC is not this runner."
+          
